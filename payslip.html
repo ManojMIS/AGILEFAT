@@ -2,36 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Payslip</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
-        .payslip-container { background-color: #fff; max-width: 800px; width: 100%; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid #2c3e50; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .info-section { display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .label { font-weight: bold; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
-        .amount { text-align: right; }
-        .summary-section { background-color: #2c3e50; color: white; padding: 15px; text-align: right; font-weight: bold; }
-        @media print { .no-print { display: none; } }
+        body { font: 12px sans-serif; background: #eee; margin: 10px; }
+        .payslip { background: #fff; width: 300px; padding: 15px; border: 1px solid #ccc; margin: auto; }
+        h2 { margin: 0; font-size: 16px; text-align: center; }
+        p { margin: 5px 0; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .row { display: flex; justify-content: space-between; margin: 3px 0; }
+        .bold { font-weight: bold; }
+        .net { background: #2c3e50; color: #fff; padding: 8px; margin-top: 10px; text-align: right; }
+        @media print { .btn { display: none; } }
     </style>
 </head>
 <body>
-<div class="payslip-container">
-    <div class="header"><h1>Company Name</h1><p>Payslip - October 2023</p></div>
-    <div class="info-section">
-        <div><span class="label">Name:</span> John Doe <br> <span class="label">ID:</span> EMP123</div>
-        <div><span class="label">Designation:</span> Engineer</div>
-    </div>
-    <table>
-        <tr><th>Earnings</th><th class="amount">Amount</th></tr>
-        <tr><td>Basic</td><td class="amount">5000</td></tr>
-        <tr><th>Deductions</th><th class="amount">Amount</th></tr>
-        <tr><td>Tax</td><td class="amount">800</td></tr>
-    </table>
-    <div class="summary-section">NET PAYABLE: $4,200</div>
-    <button class="no-print" onclick="window.print()">Print</button>
+<div class="payslip">
+    <h2>Company Name</h2>
+    <p>Oct 2023 | John Doe (EMP123)</p>
+    <div class="row bold"><span>Earnings</span><span>Deductions</span></div>
+    <div class="row"><span>Basic: 5000</span><span>Tax: 800</span></div>
+    <div class="net bold">NET PAY: $4,200</div>
+    <button class="btn" onclick="window.print()" style="width:100%; margin-top:10px;">Print</button>
 </div>
 </body>
 </html>
+
